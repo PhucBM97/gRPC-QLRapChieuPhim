@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -28,6 +29,8 @@ namespace gRPCRapChieuPhim.Models
         public int? XepHangPhimId { get; set; }
         public string Trailer { get; set; }
 
+        [NotMapped]
+        public virtual TheLoaiPhim TheLoaiPhim { get; set; }
         public virtual XepHangPhim XepHangPhim { get; set; }
         public virtual ICollection<LichChieu> LichChieus { get; set; }
     }
